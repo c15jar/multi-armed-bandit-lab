@@ -8,15 +8,9 @@ import bandit
 
 def simulate():
     results = []
-    sim = bandit.simulator.Simulator()
-    
     for _ in range(0, 20):
-        bandit.ref_bandit.sums = [0] * len(bandit.arms)
-        sim.randomize()
-        bandit_reward = sim.simulate(bandit.bandit)
-        print("Bandit Reward: " + str(bandit_reward))
-        ref_bandit_reward = sim.simulate(bandit.ref_bandit)
-        print("REF Bandit Reward: " + str(ref_bandit_reward))
+        bandit_reward = bandit.simulator.simulate(bandit.bandit)
+        ref_bandit_reward = bandit.simulator.simulate(bandit.ref_bandit)
         ref_plus_bonus = ref_bandit_reward * 1.05
         result = 0
         if (bandit_reward > ref_plus_bonus):
@@ -25,10 +19,4 @@ def simulate():
     return results
 
 def test_performance():
-    s = sum(simulate())
-    print(s)
-    assert s > 17
-    
-
-
-test_performance()
+    assert sum(simulate()) > 15
