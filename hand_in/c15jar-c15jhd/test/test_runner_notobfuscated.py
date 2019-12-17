@@ -17,7 +17,7 @@ def simulate():
         print("Bandit Reward: " + str(bandit_reward))
         ref_bandit_reward = sim.simulate(bandit.ref_bandit)
         print("REF Bandit Reward: " + str(ref_bandit_reward))
-        ref_plus_bonus = ref_bandit_reward * 1.20
+        ref_plus_bonus = ref_bandit_reward * 1.05
         result = 0
         if (bandit_reward > ref_plus_bonus):
             result = 1
