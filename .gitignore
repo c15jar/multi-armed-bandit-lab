@@ -1,2 +1,5 @@
 __pycache__/
 .pytest_cache/
+hand_in/*.pyc
+hand_in/c15jar-c15jhd/test/*.pyc
+hand_in/c15jar-c15jhd/test/pytransform/*.pyc
